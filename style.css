@@ -1,0 +1,235 @@
+:root {
+    --color-primary: #00D9CC;
+    --color-bg: #031115;
+    --color-text: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: var(--color-bg);
+    background: radial-gradient(circle, #031115 0%, #03191f 100%);
+    font-family: 'DM Sans', 'sans-serif';
+}
+
+.primary-btn {
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--color-bg);
+    font-weight: 600;
+    position: relative;
+}
+
+.primary-btn::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 6px;
+    top: 6px;
+    box-shadow: inset 0px 0px 0px 2px var(--color-primary);
+    transition: top .2s ease-in-out, left .2s ease-in-out;
+}
+
+.primary-btn:hover::before {
+    top: 0;
+    left: 0;
+}
+
+header {
+    padding: 4rem;
+    padding-right: 6rem;
+    padding-left: 10rem;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+header .brand img {
+    width: 130px;
+}
+
+header .links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header .links li a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color .3s ease-in-out;
+}
+
+header .links li a:hover {
+    color: var(--color-primary);
+}
+
+section.hero {
+    margin-top: 10px;
+    height: 100vh;
+    background-image: url('assets/hero_shapes0.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 20vh;
+    padding-left: 10rem;
+    padding-right: 0rem;
+    position: relative;
+    z-index: 2;
+}
+
+section.hero .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/hero_lines.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: inset(0 100% 0 0);
+    animation: revealLines 1.2s ease-in-out forwards;
+    z-index: -1;
+}
+
+@keyframes revealLines {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+section.hero .circle-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-image: url(assets/hero_shapes1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+section.hero .ball {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-image: url(assets/hero_shapes2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: slideDown 1s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+section.hero .cube1 {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-image: url(assets/hero_shapes3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation-delay: 2s;
+    animation: slideDownCube1 .8s ease-in-out forwards;
+}
+
+section.hero .cube2 {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-image: url(assets/hero_shapes4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation-delay: 2s;
+    animation: slideDownCube1 .8s ease-in-out forwards;
+}
+
+@keyframes slideDownCube1 {
+    to {
+        top: 0;
+        transform: scale(1);
+    }
+}
+
+section.hero .cube3 {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-image: url(assets/hero_shapes5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: slideDownCube1 .8s ease-in-out forwards;
+}
+
+section.hero .content {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+section.hero .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.hero .left p {
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+section.hero .left h1 {
+    color: var(--color-text);
+    font-size: 85px;
+    font-weight: 600;
+}
+
+section.hero .right {
+    padding-left: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section.hero .right p {
+    color: var(--color-text);
+    font-size: 18px;
+}
